@@ -19,6 +19,7 @@ typedef struct {
 
 static RomanValue roman_values[] = {
   {"M", 1000},
+  {"CM", 900},
   {"D", 500},
   {"CD", 400},
   {"C", 100},
