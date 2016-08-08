@@ -12,28 +12,29 @@ char * str_repeat(char *s1, int n) {
   return dest;
 }
 
+typedef struct {
+  char * roman;
+  int arabic;
+} RomanValue;
+
+static RomanValue roman_values[] = {
+  {"X", 10},
+  {"IX", 9},
+  {"V", 5},
+  {"IV", 4},
+  {"", 0}
+};
+
+
 char * arabicToRoman(int arabic) {
   char *roman = calloc(10, 1);
   int remaining = arabic;
 
-  if (remaining == 10) {
-    roman = strcat(roman, "X");
-    remaining -= 10;
-  }
-
-  if (remaining == 9) {
-    roman = strcat(roman, "IX");
-    remaining -= 9;
-  }
-
-  if (remaining >= 5) {
-    roman = strcat(roman, "V");
-    remaining -= 5;
-  }
-
-  if (remaining == 4) {
-    roman = strcat(roman, "IV");
-    remaining -= 4;
+  for (int i = 0; i < 4; i++) {
+    if (remaining >= roman_values[i].arabic) {
+      roman = strcat(roman, roman_values[i].roman);
+      remaining -= roman_values[i].arabic;
+    }
   }
 
   return strcat(roman, str_repeat("I", remaining));

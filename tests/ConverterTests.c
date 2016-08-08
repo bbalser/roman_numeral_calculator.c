@@ -11,6 +11,7 @@ START_TEST (toRoman)
   ck_assert_str_eq("VI", arabicToRoman(6));
   ck_assert_str_eq("IX", arabicToRoman(9));
   ck_assert_str_eq("X", arabicToRoman(10));
+  ck_assert_str_eq("XI", arabicToRoman(11));
 }
 END_TEST
 
