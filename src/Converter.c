@@ -16,6 +16,11 @@ char * arabicToRoman(int arabic) {
   char *roman = calloc(10, 1);
   int remaining = arabic;
 
+  if (remaining == 10) {
+    roman = strcat(roman, "X");
+    remaining -= 10;
+  }
+
   if (remaining == 9) {
     roman = strcat(roman, "IX");
     remaining -= 9;
