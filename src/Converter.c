@@ -47,3 +47,7 @@ char * arabicToRoman(int arabic) {
 
   return roman;
 }
+
+int romanToArabic(char *roman) {
+  return 1;
+}

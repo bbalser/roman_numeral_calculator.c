@@ -26,6 +26,12 @@ START_TEST (toRoman)
 }
 END_TEST
 
+START_TEST(toArabic)
+{
+  ck_assert_int_eq(1, romanToArabic("I"));
+}
+END_TEST
+
 Suite * converter_suite(void) {
   Suite *s;
   TCase *tc_core;
@@ -34,6 +40,7 @@ Suite * converter_suite(void) {
 
   tc_core = tcase_create("Core");
   tcase_add_test(tc_core, toRoman);
+  tcase_add_test(tc_core, toArabic);
   suite_add_tcase(s, tc_core);
 
   return s;
