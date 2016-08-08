@@ -30,6 +30,7 @@ START_TEST(toArabic)
 {
   ck_assert_int_eq(1, romanToArabic("I"));
   ck_assert_int_eq(2, romanToArabic("II"));
+  ck_assert_int_eq(5, romanToArabic("V"));
 }
 END_TEST
 
