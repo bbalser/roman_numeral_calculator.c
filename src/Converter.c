@@ -22,6 +22,7 @@ static RomanValue roman_values[] = {
   {"D", 500},
   {"C", 100},
   {"L", 50},
+  {"XL", 40},
   {"X", 10},
   {"IX", 9},
   {"V", 5},
@@ -29,7 +30,6 @@ static RomanValue roman_values[] = {
   {"I", 1},
   {"", 0}
 };
-
 
 char * arabicToRoman(int arabic) {
   char *roman = calloc(10, 1);
