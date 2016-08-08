@@ -3,7 +3,7 @@
 
 char * str_repeat(char *s1, int n) {
   size_t slen = strlen(s1);
-  char *dest = malloc(n*slen+1);
+  char *dest = calloc(n*slen+1, 1);
 
   for (int i = 0; i < n; i++) {
     dest = strcat(dest, s1);
@@ -13,11 +13,18 @@ char * str_repeat(char *s1, int n) {
 }
 
 char * arabicToRoman(int arabic) {
-  if (arabic == 5) {
-    return "V";
+  char *roman = calloc(10, 1);
+  int remaining = arabic;
+
+  if (remaining >= 5) {
+    roman = strcat(roman, "V");
+    remaining -= 5;
   }
-  if (arabic == 4) {
-    return "IV";
+
+  if (remaining == 4) {
+    roman = strcat(roman, "IV");
+    remaining -= 4;
   }
-  return str_repeat("I", arabic);
+
+  return strcat(roman, str_repeat("I", remaining));
 }
