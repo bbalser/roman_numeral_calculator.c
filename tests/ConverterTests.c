@@ -21,6 +21,8 @@ START_TEST (toRoman)
   ck_assert_str_eq("D", arabicToRoman(500));
   ck_assert_str_eq("CM", arabicToRoman(900));
   ck_assert_str_eq("M", arabicToRoman(1000));
+  ck_assert_str_eq("MMMCMXCIX", arabicToRoman(3999));
+  ck_assert_str_eq("MMMDCCCXXXVIII", arabicToRoman(3838));
 }
 END_TEST
 

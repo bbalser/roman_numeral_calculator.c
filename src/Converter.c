@@ -35,7 +35,7 @@ static RomanValue roman_values[] = {
 };
 
 char * arabicToRoman(int arabic) {
-  char *roman = calloc(10, 1);
+  char *roman = calloc(15, 1);
   int remaining = arabic;
 
   for (int i = 0; 0 != roman_values[i].arabic; i++) {
