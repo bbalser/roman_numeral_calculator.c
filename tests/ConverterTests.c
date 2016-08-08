@@ -16,6 +16,7 @@ START_TEST (toRoman)
   ck_assert_str_eq("L", arabicToRoman(50));
   ck_assert_str_eq("C", arabicToRoman(100));
   ck_assert_str_eq("D", arabicToRoman(500));
+  ck_assert_str_eq("M", arabicToRoman(1000));
 }
 END_TEST
 
