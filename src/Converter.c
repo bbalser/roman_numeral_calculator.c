@@ -49,5 +49,5 @@ char * arabicToRoman(int arabic) {
 }
 
 int romanToArabic(char *roman) {
-  return 1;
+  return strlen(roman);
 }
