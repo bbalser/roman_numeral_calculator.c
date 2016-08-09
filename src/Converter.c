@@ -2,6 +2,10 @@
 #include <string.h>
 
 char * strrepeat(char *s1, int n) {
+  if (n == 0) {
+    return "";
+  }
+  
   size_t slen = strlen(s1);
   char *dest = calloc(n*slen+1, 1);
 
