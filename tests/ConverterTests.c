@@ -35,6 +35,8 @@ START_TEST(toArabic)
   ck_assert_int_eq(6, romanToArabic("VI"));
   ck_assert_int_eq(9, romanToArabic("IX"));
   ck_assert_int_eq(10, romanToArabic("X"));
+  ck_assert_int_eq(20, romanToArabic("XX"));
+  ck_assert_int_eq(40, romanToArabic("XL"));
 }
 END_TEST
 

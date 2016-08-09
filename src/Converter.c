@@ -57,26 +57,13 @@ char * arabicToRoman(int arabic) {
 int romanToArabic(char *roman) {
   int total = 0;
 
-  if (strncmp(roman, "X", 1) == 0) {
-    total += 10;
-    roman = substr(roman, 1);
+  for (int i = 0; 0 != roman_values[i].arabic; i++) {
+    int len = strlen(roman_values[i].roman);
+    while (strncmp(roman, roman_values[i].roman, len) ==0) {
+      total += roman_values[i].arabic;
+      roman = substr(roman, len);
+    }
   }
-
-  if (strncmp(roman, "IX", 2) == 0) {
-    total += 9;
-    roman = substr(roman, 2);
-  }
-
-  if (strncmp(roman,"V", 1) == 0) {
-    total += 5;
-    roman = substr(roman, 1);
-  }
-
-  if (strncmp(roman, "IV", 2) == 0) {
-    total += 4;
-    roman = substr(roman, 2);
-  }
-
-  total += strlen(roman);
+  
   return total;
 }
