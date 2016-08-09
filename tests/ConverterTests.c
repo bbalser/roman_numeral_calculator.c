@@ -37,6 +37,15 @@ START_TEST(toArabic)
   ck_assert_int_eq(10, romanToArabic("X"));
   ck_assert_int_eq(20, romanToArabic("XX"));
   ck_assert_int_eq(40, romanToArabic("XL"));
+  ck_assert_int_eq(50, romanToArabic("L"));
+  ck_assert_int_eq(90, romanToArabic("XC"));
+  ck_assert_int_eq(100, romanToArabic("C"));
+  ck_assert_int_eq(400, romanToArabic("CD"));
+  ck_assert_int_eq(500, romanToArabic("D"));
+  ck_assert_int_eq(900, romanToArabic("CM"));
+  ck_assert_int_eq(1000, romanToArabic("M"));
+  ck_assert_int_eq(3999, romanToArabic("MMMCMXCIX"));
+  ck_assert_int_eq(3838, romanToArabic("MMMDCCCXXXVIII"));
 }
 END_TEST
 
