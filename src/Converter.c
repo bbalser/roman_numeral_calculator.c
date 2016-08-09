@@ -62,6 +62,11 @@ int romanToArabic(char *roman) {
     roman = substr(roman, 1);
   }
 
+  if (strncmp(roman, "IX", 2) == 0) {
+    total += 9;
+    roman = substr(roman, 2);
+  }
+
   if (strncmp(roman,"V", 1) == 0) {
     total += 5;
     roman = substr(roman, 1);
