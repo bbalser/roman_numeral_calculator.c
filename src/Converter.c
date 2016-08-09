@@ -12,12 +12,6 @@ char * strrepeat(char *s1, int n) {
   return dest;
 }
 
-char * substr(char *s1, int start) {
-  size_t len = strlen(s1);
-  char *substr = calloc(len-start, 1);
-  return strcpy(substr, s1+start);
-}
-
 typedef struct {
   char * roman;
   int arabic;
@@ -61,9 +55,9 @@ int romanToArabic(char *roman) {
     int len = strlen(roman_values[i].roman);
     while (strncmp(roman, roman_values[i].roman, len) ==0) {
       total += roman_values[i].arabic;
-      roman = substr(roman, len);
+      roman = roman + len;
     }
   }
-  
+
   return total;
 }
