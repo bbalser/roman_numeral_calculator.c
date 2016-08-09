@@ -35,7 +35,7 @@ static RomanValue roman_values[] = {
 };
 
 char * arabicToRoman(int arabic) {
-  char *roman = calloc(15, 1);
+  char *roman = calloc(16, 1);
   int remaining = arabic;
 
   for (int i = 0; 0 != roman_values[i].arabic; i++) {
@@ -53,7 +53,7 @@ int romanToArabic(char *roman) {
 
   for (int i = 0; 0 != roman_values[i].arabic; i++) {
     int len = strlen(roman_values[i].roman);
-    while (strncmp(roman, roman_values[i].roman, len) ==0) {
+    while (strncmp(roman, roman_values[i].roman, len) == 0) {
       total += roman_values[i].arabic;
       roman = roman + len;
     }
