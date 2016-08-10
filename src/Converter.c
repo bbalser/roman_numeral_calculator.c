@@ -1,17 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-char * strrepeat(char *s1, int n) {
-  size_t slen = strlen(s1);
-  char *dest = calloc(n*slen+1, 1);
-
-  for (int i = 0; i < n; i++) {
-    dest = strcat(dest, s1);
-  }
-
-  return dest;
-}
-
 typedef struct {
   char * roman;
   int arabic;
@@ -42,8 +31,10 @@ char * arabicToRoman(int arabic) {
     int times = remaining / roman_values[i].arabic;
     remaining = remaining % roman_values[i].arabic;
 
-    if (times > 0) { 
-      roman = strcat(roman, strrepeat(roman_values[i].roman, times));
+    if (times > 0) {
+      for (int j = 0; j < times; j++) {
+        strcat(roman, roman_values[i].roman);
+      }
     }
   }
 
