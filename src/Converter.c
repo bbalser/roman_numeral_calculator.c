@@ -31,10 +31,8 @@ char * arabicToRoman(int arabic) {
     int times = remaining / roman_values[i].arabic;
     remaining = remaining % roman_values[i].arabic;
 
-    if (times > 0) {
-      for (int j = 0; j < times; j++) {
-        strcat(roman, roman_values[i].roman);
-      }
+    for (int j = 0; j < times; j++) {
+      strcat(roman, roman_values[i].roman);
     }
   }
 
