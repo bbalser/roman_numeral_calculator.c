@@ -1,6 +1,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+void repeat(char * buffer, char * src, int n) {
+  for (int i = 0; i < n; i++) {
+    strcat(buffer, src);
+  }
+}
+
 typedef struct {
   char * roman;
   int arabic;
@@ -31,9 +37,7 @@ char * arabicToRoman(int arabic) {
     int times = remaining / roman_values[i].arabic;
     remaining = remaining % roman_values[i].arabic;
 
-    for (int j = 0; j < times; j++) {
-      strcat(roman, roman_values[i].roman);
-    }
+    repeat(roman, roman_values[i].roman, times);
   }
 
   return roman;
